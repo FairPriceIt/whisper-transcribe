@@ -14,9 +14,9 @@ app = Flask(__name__)
 cors=CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route('/detect',methods=['POST'])
+@app.route('/detect-lang',methods=['POST'])
 @cross_origin()
-def detect():
+def detect_lang():
     audio_url=request.form.get('url')
     # download the file
     response = requests.get(audio_url,stream=True)
