@@ -34,4 +34,5 @@ def detect_lang():
     return jsonify(res)
 
 if __name__ == '__main__':
-    app.run(debug=False,host='0.0.0.0',port=80)
+    from waitress import serve
+    serve(app, host="0.0.0.0",port=80)
